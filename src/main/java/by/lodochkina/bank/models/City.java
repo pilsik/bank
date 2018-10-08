@@ -4,6 +4,11 @@ import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 
 @Entity
 @Table(name = "cities")
@@ -15,9 +20,30 @@ public class City implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "cityOfRegistration")
+    private Set<Client> clientsByRegistration;
+
+    @OneToMany(mappedBy = "cityOfResidence")
+    private Set<Client> clientsByResidence;
+
+    public Set<Client> getClientsByRegistration() {
+        return clientsByRegistration;
+    }
+
+    public void setClientsByRegistration(Set<Client> clientsByRegistration) {
+        this.clientsByRegistration = clientsByRegistration;
+    }
+
+    public Set<Client> getClientsByResidence() {
+        return clientsByResidence;
+    }
+
+    public void setClientsByResidence(Set<Client> clientsByResidence) {
+        this.clientsByResidence = clientsByResidence;
+    }
 
     public City() {
     }
@@ -59,5 +85,13 @@ public class City implements Serializable {
         int result = id.hashCode();
         result = 31 * result + name.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

@@ -3,7 +3,7 @@ package by.lodochkina.bank.dao;
 import java.io.Serializable;
 import java.util.List;
 
-public interface CityDao<T, Id extends Serializable> {
+public interface CitizenshipDao<T, Id extends Serializable> {
 
     public void persist(T entity);
 

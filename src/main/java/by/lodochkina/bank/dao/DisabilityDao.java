@@ -3,7 +3,7 @@ package by.lodochkina.bank.dao;
 import java.io.Serializable;
 import java.util.List;
 
-public interface CityDaoInterface<T, Id extends Serializable> {
+public interface DisabilityDao<T, Id extends Serializable> {
 
     public void persist(T entity);
 
@@ -16,4 +16,5 @@ public interface CityDaoInterface<T, Id extends Serializable> {
     public List<T> findAll();
 
     public void deleteAll();
+
 }

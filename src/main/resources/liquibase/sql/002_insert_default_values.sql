@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-INSERT INTO cities (name) VALUES 
+INSERT INTO cities (name) VALUES
   ('Minsk'),
   ('Mogilev'),
   ('Grodno'),
@@ -8,7 +8,7 @@ INSERT INTO cities (name) VALUES
   ('Gomel'),
   ('Brest');
 
-INSERT INTO citizenships (name) VALUES 
+INSERT INTO citizenships (name) VALUES
   ('Belarus'),
   ('Russian'),
   ('Ukraine'),
@@ -16,13 +16,13 @@ INSERT INTO citizenships (name) VALUES
   ('Canada'),
   ('Norway');
 
-INSERT INTO disability (name) VALUES 
+INSERT INTO disability (name) VALUES
   ('no'),
   ('first group'),
   ('second group'),
   ('third group');
 
-INSERT INTO marital_status (name) VALUES 
+INSERT INTO marital_status (name) VALUES
   ('single'),
   ('married'),
   ('divorced'),

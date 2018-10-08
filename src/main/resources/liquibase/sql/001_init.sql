@@ -15,8 +15,6 @@ DROP SEQUENCE IF EXISTS "citizenships_seq" CASCADE;
 DROP SEQUENCE IF EXISTS "disability_seq" CASCADE;
 DROP SEQUENCE IF EXISTS "marital_status_seq" CASCADE;
 DROP SEQUENCE IF EXISTS "clients_seq" CASCADE;
-DROP SEQUENCE IF EXISTS "passports_seq" CASCADE;
-DROP SEQUENCE IF EXISTS "contacts_seq" CASCADE;
 
 /*Create all sequences for iterate*/
 CREATE SEQUENCE "cities_seq" START 1 INCREMENT BY 1;
@@ -24,8 +22,6 @@ CREATE SEQUENCE "citizenships_seq" START 1 INCREMENT BY 1;
 CREATE SEQUENCE "disability_seq" START 1 INCREMENT BY 1;
 CREATE SEQUENCE "marital_status_seq" START 1 INCREMENT BY 1;
 CREATE SEQUENCE "clients_seq" START 1 INCREMENT BY 1;
-CREATE SEQUENCE "passports_seq" START 1 INCREMENT BY 1;
-CREATE SEQUENCE "contacts_seq" START 1 INCREMENT BY 1;
 
 CREATE TABLE "cities" (
   "id"              BIGINT PRIMARY KEY DEFAULT "nextval"('"cities_seq"'),
@@ -52,13 +48,11 @@ CREATE TABLE "clients" (
   "surname"							    VARCHAR(100) NOT NULL,
   "name"							      VARCHAR(100) NOT NULL,
   "patronymic"						  VARCHAR(100) NOT NULL,
-  "DOB"								      DATE NOT NULL,
+  "dob"								      DATE NOT NULL,
   "sex"								      BOOLEAN NOT NULL,
   "pensioner"						    BOOLEAN NOT NULL,
   "monthly_income"					MONEY,
   "bpl"								      VARCHAR(100) NOT NULL,
-  "passports_id"					  BIGINT NOT NULL UNIQUE,
-  "contacts_id"						  BIGINT NOT NULL UNIQUE,
   "city_of_residence_id"		BIGINT NOT NULL,
   "city_of_registration_id"	BIGINT NOT NULL,
   "marital_status_id"				BIGINT NOT NULL,
@@ -72,29 +66,29 @@ CREATE TABLE "clients" (
 );
 
 CREATE TABLE "passports" (
-  "id"              				        BIGINT PRIMARY KEY DEFAULT "nextval"('"passports_seq"'),
+  "id"              				        BIGINT PRIMARY KEY,
   "passport_series"					        VARCHAR(100) NOT NULL,
   "passport_number"					        VARCHAR(100) NOT NULL,
   "passport_authority"			        VARCHAR(100) NOT NULL,
   "passport_date_of_issue"			    DATE NOT NULL,
   "passport_identification_number"	VARCHAR(100) NOT NULL,
-  FOREIGN KEY ("id") REFERENCES "clients" ("passports_id") ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY ("id") REFERENCES "clients" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE "contacts" (
-  "id"              		BIGINT PRIMARY KEY DEFAULT "nextval"('"contacts_seq"'),
+  "id"              		BIGINT PRIMARY KEY,
   "address"							VARCHAR(200) NOT NULL,
-  "phome_home"					VARCHAR(100) NOT NULL,
-  "phome_mobile"				VARCHAR(100) NOT NULL,
+  "phone_home"					VARCHAR(100) NOT NULL,
+  "phone_mobile"				VARCHAR(100) NOT NULL,
   "email"							  VARCHAR(100),
-  FOREIGN KEY ("id") REFERENCES "clients" ("contacts_id") ON DELETE CASCADE ON UPDATE CASCADE
+  FOREIGN KEY ("id") REFERENCES "clients" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CHECK indexes
 ALTER TABLE "passports" ADD CONSTRAINT "passport_series_regexp" CHECK ("passport_series" ~ $$^\d{7}$$);
 ALTER TABLE "passports" ADD CONSTRAINT "passport_identification_number_regexp" CHECK ("passport_identification_number" ~ $$^\d{7}[A-z]\d{3}[A-z]{2}\d$$);
-ALTER TABLE "contacts" ADD CONSTRAINT "phome_home_regexp" CHECK ("phome_home" ~ $$^\d{6}$$);
-ALTER TABLE "contacts" ADD CONSTRAINT "phome_mobile_regexp" CHECK ("phome_mobile" ~ $$^\+\d{1,3}\(\d{2}\)\d{7}$$);
+ALTER TABLE "contacts" ADD CONSTRAINT "phone_home_regexp" CHECK ("phone_home" ~ $$^\d{6}$$);
+ALTER TABLE "contacts" ADD CONSTRAINT "phone_mobile_regexp" CHECK ("phone_mobile" ~ $$^\+\d{1,3}\(\d{2}\)\d{7}$$);
 ALTER TABLE "contacts" ADD CONSTRAINT "email_regexp" CHECK ("email" ~ $$^[a-zA-Z0-9_\-]+@([a-zA-Z0-9_\-]+\.)\w{2,4}$$);
 
 END TRANSACTION;
