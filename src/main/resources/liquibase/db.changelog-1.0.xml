@@ -14,12 +14,4 @@
         <sqlFile path="./sql/002_insert_default_values.sql" relativeToChangelogFile="true" stripComments="true"/>
     </changeSet>
 
-    <changeSet id="add test client values" author="Julia Lodochkina">
-        <sqlFile path="./sql/003_insert_test_client.sql" relativeToChangelogFile="true" stripComments="true"/>
-    </changeSet>
-
-    <changeSet id="add test client values" author="Julia Lodochkina">
-        <sqlFile path="./sql/004_insert_data_to_client.sql" relativeToChangelogFile="true" stripComments="true"/>
-    </changeSet>
-
 </databaseChangeLog>

@@ -85,7 +85,7 @@ CREATE TABLE "contacts" (
 );
 
 -- CHECK indexes
-ALTER TABLE "passports" ADD CONSTRAINT "passport_series_regexp" CHECK ("passport_series" ~ $$^\d{7}$$);
+ALTER TABLE "passports" ADD CONSTRAINT "passport_number_regexp" CHECK ("passport_number" ~ $$^\d{7}$$);
 ALTER TABLE "passports" ADD CONSTRAINT "passport_identification_number_regexp" CHECK ("passport_identification_number" ~ $$^\d{7}[A-z]\d{3}[A-z]{2}\d$$);
 ALTER TABLE "contacts" ADD CONSTRAINT "phone_home_regexp" CHECK ("phone_home" ~ $$^\d{6}$$);
 ALTER TABLE "contacts" ADD CONSTRAINT "phone_mobile_regexp" CHECK ("phone_mobile" ~ $$^\+\d{1,3}\(\d{2}\)\d{7}$$);
