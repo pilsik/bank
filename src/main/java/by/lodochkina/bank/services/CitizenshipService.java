@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface CitizenshipService {
 
+    public void persist(Citizenship entity);
+
     public void update(Citizenship entity);
 
     public Citizenship findById(Long id);

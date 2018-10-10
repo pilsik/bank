@@ -123,8 +123,7 @@ public class Contact {
                 ", address='" + address + '\'' +
                 ", phone_home='" + phone_home + '\'' +
                 ", phone_mobile='" + phone_mobile + '\'' +
-                ", email='" + email + '\'' +
-                ", client=" + client +
+                ", email='" + email+
                 '}';
     }
 }

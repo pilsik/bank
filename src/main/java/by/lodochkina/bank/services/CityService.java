@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface CityService {
 
+    public void persist(City entity);
+
     public void update(City entity);
 
     public City findById(Long id);

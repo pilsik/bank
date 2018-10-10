@@ -47,24 +47,25 @@ public class Client implements Serializable {
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "client", cascade = CascadeType.ALL)
     private Contact contact;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "city_of_residence_id", nullable = false)
     private City cityOfResidence;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE}, fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "city_of_registration_id", nullable = false)
     private City cityOfRegistration;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "marital_status_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "marital_status_id", nullable = false)
     private MaritalStatus maritalStatus;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "citizenship_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "citizenship_id", nullable = false)
     private Citizenship citizenship;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "disability_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "disability_id", nullable = false)
     private Disability disability;
 
     public Client() {
@@ -244,8 +245,8 @@ public class Client implements Serializable {
                 ", pepensioner=" + pensioner +
                 ", monthly_income=" + monthly_income +
                 ", bpl='" + bpl + '\'' +
-                ", passport=" + passport +
-                ", contact=" + contact +
+                ", passport=" + this.getPassport() +
+                ", contact=" + this.getContact() +
                 ", cityOfResidence=" + cityOfResidence +
                 ", cityOfRegistration=" + cityOfRegistration +
                 ", maritalStatus=" + maritalStatus +

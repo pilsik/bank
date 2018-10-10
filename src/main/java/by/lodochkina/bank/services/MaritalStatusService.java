@@ -6,6 +6,8 @@ import by.lodochkina.bank.models.MaritalStatus;
 import java.util.List;
 
 public interface MaritalStatusService {
+
+    public void persist(MaritalStatus entity);
     
     public void update(MaritalStatus entity);
 

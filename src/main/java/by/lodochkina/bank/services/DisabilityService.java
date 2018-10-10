@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface DisabilityService {
 
+    public void persist(Disability entity);
+
     public void update(Disability entity);
 
     public Disability findById(Long id);

@@ -48,8 +48,7 @@ public class City implements Serializable {
     public City() {
     }
 
-    public City(Long id, String name) {
-        this.id = id;
+    public City(String name) {
         this.name = name;
     }
 

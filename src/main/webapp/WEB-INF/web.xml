@@ -7,11 +7,46 @@
     <servlet>
         <servlet-name>welcomeServlet</servlet-name>
         <servlet-class>by.lodochkina.bank.servlets.WelcomeServlet</servlet-class>
-        <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>welcomeServlet</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cityServlet</servlet-name>
+        <servlet-class>by.lodochkina.bank.servlets.CityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cityServlet</servlet-name>
+        <url-pattern>/city</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>citizenshipServlet</servlet-name>
+        <servlet-class>by.lodochkina.bank.servlets.CitizenshipServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>citizenshipServlet</servlet-name>
+        <url-pattern>/citizenship</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>disabilityServlet</servlet-name>
+        <servlet-class>by.lodochkina.bank.servlets.DisabilityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>disabilityServlet</servlet-name>
+        <url-pattern>/disability</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>maritalStatusServlet</servlet-name>
+        <servlet-class>by.lodochkina.bank.servlets.MaritalStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>maritalStatusServlet</servlet-name>
+        <url-pattern>/marital_status</url-pattern>
     </servlet-mapping>
 
 </web-app>
