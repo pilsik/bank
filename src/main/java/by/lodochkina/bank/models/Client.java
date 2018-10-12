@@ -1,7 +1,5 @@
 package by.lodochkina.bank.models;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -51,7 +49,6 @@ public class Client implements Serializable {
     @JoinColumn(name = "city_of_residence_id", nullable = false)
     private City cityOfResidence;
 
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "city_of_registration_id", nullable = false)
     private City cityOfRegistration;
@@ -69,6 +66,24 @@ public class Client implements Serializable {
     private Disability disability;
 
     public Client() {
+    }
+
+    public Client(String surname, String name, String patronymic, Date dob, Boolean sex, Boolean pensioner, BigDecimal monthly_income, String bpl, Passport passport, Contact contact, City cityOfResidence, City cityOfRegistration, MaritalStatus maritalStatus, Citizenship citizenship, Disability disability) {
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.dob = dob;
+        this.sex = sex;
+        this.pensioner = pensioner;
+        this.monthly_income = monthly_income;
+        this.bpl = bpl;
+        this.passport = passport;
+        this.contact = contact;
+        this.cityOfResidence = cityOfResidence;
+        this.cityOfRegistration = cityOfRegistration;
+        this.maritalStatus = maritalStatus;
+        this.citizenship = citizenship;
+        this.disability = disability;
     }
 
     public void setPensioner(Boolean pensioner) {

@@ -46,6 +46,7 @@
         </tr>
 </table>
 <hr>
+<a href="${pageContext.servletContext.contextPath}/client">show all clients</a>
 <a href="${pageContext.servletContext.contextPath}/city">show all cities</a>
 <a href="${pageContext.servletContext.contextPath}/citizenship">show all citizenships</a>
 <a href="${pageContext.servletContext.contextPath}/disability">show all disability</a>

@@ -1,7 +1,5 @@
 package by.lodochkina.bank.models;
 
-import com.sun.istack.internal.NotNull;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -11,9 +9,7 @@ import java.util.Date;
 public class Passport implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "passport_gen")
-    @SequenceGenerator(name = "passport_gen", sequenceName = "clients_seq")
-    @Column(name = "id")
+    @GeneratedValue
     private Long id;
 
     @Column(name = "passport_series", nullable = false)
@@ -32,7 +28,7 @@ public class Passport implements Serializable {
     private String passport_identification_number;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
+    @PrimaryKeyJoinColumn(name = "id")
     private Client client;
 
     public Passport() {

@@ -11,20 +11,21 @@
         <td>Код клиента:</td>
         <td>Фамилия клиента:</td>
     </tr>
-    <%--@elvariable id="cities" type="java.util.List"--%>
-    <%--@elvariable id="city" type="by.lodochkina.bank.models.City"--%>
-    <c:forEach items="${cities}" var="city" varStatus="status">
+    <%--@elvariable id="maritalStatusList" type="java.util.List"--%>
+    <%--@elvariable id="maritalStatus" type="by.lodochkina.bank.models.MaritalStatus"--%>
+    <c:forEach items="${maritalStatusList}" var="maritalStatus" varStatus="status">
         <tr valign="top">
-            <td>${city.id}</td>
-            <td>${city.name}</td>
+            <td>${maritalStatus.id}</td>
+            <td>${maritalStatus.name}</td>
         </tr>
     </c:forEach>
 </table>
 <hr>
-<form action="/city" method="post">
-    Название города: <input type="text" name="cityName"/>
-    <input type="submit" value="add city"/>
+<form action="/marital_status" method="post">
+    Marital status: <input type="text" name="maritalStatusName"/>
+    <input type="submit" value="add marital status"/>
 </form>
+<a href="${pageContext.servletContext.contextPath}/client">show all clients</a>
 <a href="${pageContext.servletContext.contextPath}/city">show all cities</a>
 <a href="${pageContext.servletContext.contextPath}/citizenship">show all citizenships</a>
 <a href="${pageContext.servletContext.contextPath}/disability">show all disability</a>

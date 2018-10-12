@@ -32,8 +32,7 @@ public class MaritalStatus {
     public MaritalStatus() {
     }
 
-    public MaritalStatus(Long id, String name) {
-        this.id = id;
+    public MaritalStatus(String name) {
         this.name = name;
     }
 

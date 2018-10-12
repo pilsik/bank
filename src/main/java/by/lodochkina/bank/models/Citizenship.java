@@ -34,8 +34,7 @@ public class Citizenship implements Serializable {
     public Citizenship() {
     }
 
-    public Citizenship(Long id, String name) {
-        this.id = id;
+    public Citizenship(String name) {
         this.name = name;
     }
 

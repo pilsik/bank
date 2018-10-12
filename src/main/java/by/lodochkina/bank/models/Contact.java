@@ -9,9 +9,7 @@ import javax.persistence.*;
 public class Contact {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "clients_gen")
-    @SequenceGenerator(name = "clients_gen", sequenceName = "clients_seq")
-    @Column(name = "id")
+    @GeneratedValue
     private Long id;
 
     @Column(name = "address", nullable = false)
@@ -27,7 +25,7 @@ public class Contact {
     private String email;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
+    @PrimaryKeyJoinColumn(name = "id")
     private Client client;
 
     public Contact() {

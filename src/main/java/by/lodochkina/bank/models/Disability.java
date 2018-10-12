@@ -33,8 +33,7 @@ public class Disability implements Serializable{
     public Disability() {
     }
 
-    public Disability(Long id, String name) {
-        this.id = id;
+    public Disability(String name) {
         this.name = name;
     }
 

@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface ClientService {
 
+    public void persist(Client entity);
+
     public void update(Client entity);
 
     public Client findById(Long id);

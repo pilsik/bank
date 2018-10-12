@@ -49,4 +49,13 @@
         <url-pattern>/marital_status</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>clientServlet</servlet-name>
+        <servlet-class>by.lodochkina.bank.servlets.ClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>clientServlet</servlet-name>
+        <url-pattern>/client</url-pattern>
+    </servlet-mapping>
+
 </web-app>
