@@ -11,7 +11,7 @@ public class MaritalStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "marital_status_gen")
-    @SequenceGenerator(name = "marital_status_gen", sequenceName = "marital_status_seq")
+    @SequenceGenerator(name = "marital_status_gen", sequenceName = "marital_status_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 

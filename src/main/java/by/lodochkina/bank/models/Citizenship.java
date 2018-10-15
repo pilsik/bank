@@ -13,7 +13,7 @@ public class Citizenship implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "citizenships_gen")
-    @SequenceGenerator(name = "citizenships_gen", sequenceName = "citizenships_seq")
+    @SequenceGenerator(name = "citizenships_gen", sequenceName = "citizenships_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 

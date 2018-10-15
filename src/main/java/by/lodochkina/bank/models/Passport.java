@@ -1,5 +1,7 @@
 package by.lodochkina.bank.models;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -9,7 +11,6 @@ import java.util.Date;
 public class Passport implements Serializable {
 
     @Id
-    @GeneratedValue
     private Long id;
 
     @Column(name = "passport_series", nullable = false)
@@ -27,8 +28,9 @@ public class Passport implements Serializable {
     @Column(name = "passport_identification_number", nullable = false)
     private String passport_identification_number;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn(name = "id")
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id")
+    @MapsId
     private Client client;
 
     public Passport() {

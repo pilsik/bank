@@ -12,7 +12,7 @@ public class Disability implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "disability_gen")
-    @SequenceGenerator(name = "disability_gen", sequenceName = "disability_seq")
+    @SequenceGenerator(name = "disability_gen", sequenceName = "disability_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 

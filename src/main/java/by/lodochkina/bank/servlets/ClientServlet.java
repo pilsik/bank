@@ -38,6 +38,11 @@ public class ClientServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String action = req.getParameter("action");
+        if (action != null && action.equalsIgnoreCase("delete")) {
+            Long clientId = Long.valueOf(req.getParameter("clientId"));
+            this.clientService.delete(clientId);
+        }
         List<Client> clientList = this.clientService.findAll();
         List<City> cityList = this.cityService.findAll();
         List<Disability> disabilityList = this.disabilityService.findAll();

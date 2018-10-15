@@ -32,11 +32,12 @@
         <td>disability</td>
         <td>passport</td>
         <td>contact</td>
+        <td>delete</td>
     </tr>
-    <tr valign="top">
-        <%--@elvariable id="clientList" type="java.util.List"--%>
-            <%--@elvariable id="client" type="by.lodochkina.bank.models.Client"--%>
-        <c:forEach items="${clientList}" var="client">
+    <c:forEach items="${clientList}" var="client">
+        <tr valign="top">
+                <%--@elvariable id="clientList" type="java.util.List"--%>
+                <%--@elvariable id="client" type="by.lodochkina.bank.models.Client"--%>
             <td>${client.id}</td>
             <td>${client.surname}</td>
             <td>${client.name}</td>
@@ -53,8 +54,11 @@
             <td>${client.disability.name}</td>
             <td>${client.passport.toString()}</td>
             <td>${client.contact.toString()}</td>
-        </c:forEach>
-    </tr>
+            <td>
+                <a href="${pageContext.servletContext.contextPath}/client?action=delete&clientId=${client.id}">Delete</a>
+            </td>
+        </tr>
+    </c:forEach>
 </table>
 <div class="container">
     <form action="/client" method="post">
@@ -232,6 +236,8 @@
             </div>
         </div>
         <input class="btn btn-primary" type="submit" value="add client"/>
+
+
     </form>
 </div>
 <a href="${pageContext.servletContext.contextPath}/client">show all clients</a>

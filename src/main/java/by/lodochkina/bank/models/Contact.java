@@ -24,8 +24,9 @@ public class Contact {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn(name = "id")
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id")
+    @MapsId
     private Client client;
 
     public Contact() {

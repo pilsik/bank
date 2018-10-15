@@ -20,6 +20,9 @@
         <property name="hibernate.connection.password">
             root
         </property>
+        <property name="hibernate.show_sql">
+            true
+        </property>
 
         <mapping class="by.lodochkina.bank.models.City"/>
         <mapping class="by.lodochkina.bank.models.Citizenship"/>
