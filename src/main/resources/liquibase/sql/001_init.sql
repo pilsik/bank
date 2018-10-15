@@ -22,7 +22,6 @@ CREATE SEQUENCE "citizenships_seq" START 1 INCREMENT BY 1;
 CREATE SEQUENCE "disability_seq" START 1 INCREMENT BY 1;
 CREATE SEQUENCE "marital_status_seq" START 1 INCREMENT BY 1;
 CREATE SEQUENCE "clients_seq" START 1 INCREMENT BY 1;
-CREATE SEQUENCE "hibernate_sequence" START 1 INCREMENT BY 1;
 
 CREATE TABLE "cities" (
   "id"              BIGINT PRIMARY KEY DEFAULT "nextval"('"cities_seq"'),
@@ -72,8 +71,8 @@ CREATE TABLE "passports" (
   "passport_number"					        VARCHAR(100) NOT NULL,
   "passport_authority"			        VARCHAR(100) NOT NULL,
   "passport_date_of_issue"			    DATE NOT NULL,
-  "passport_identification_number"	VARCHAR(100) NOT NULL
- /* FOREIGN KEY ("id") REFERENCES "clients" ("id") ON DELETE CASCADE ON UPDATE CASCADE*/
+  "passport_identification_number"	VARCHAR(100) NOT NULL,
+   FOREIGN KEY ("id") REFERENCES "clients" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE "contacts" (
@@ -81,8 +80,8 @@ CREATE TABLE "contacts" (
   "address"							VARCHAR(200) NOT NULL,
   "phone_home"					VARCHAR(100) NOT NULL,
   "phone_mobile"				VARCHAR(100) NOT NULL,
-  "email"							  VARCHAR(100)
-/*  FOREIGN KEY ("id") REFERENCES "clients" ("id") ON DELETE CASCADE ON UPDATE CASCADE*/
+  "email"							  VARCHAR(100),
+  FOREIGN KEY ("id") REFERENCES "clients" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CHECK indexes

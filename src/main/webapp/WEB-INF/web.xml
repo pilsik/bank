@@ -5,15 +5,6 @@
          version="3.0">
 
     <servlet>
-        <servlet-name>welcomeServlet</servlet-name>
-        <servlet-class>by.lodochkina.bank.servlets.WelcomeServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>welcomeServlet</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>cityServlet</servlet-name>
         <servlet-class>by.lodochkina.bank.servlets.CityServlet</servlet-class>
     </servlet>
@@ -57,5 +48,30 @@
         <servlet-name>clientServlet</servlet-name>
         <url-pattern>/client</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>editClientServlet</servlet-name>
+        <servlet-class>by.lodochkina.bank.servlets.EditClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editClientServlet</servlet-name>
+        <url-pattern>/client/edit</url-pattern>
+    </servlet-mapping>
+
+    <!--CharsetFilter start-->
+
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>by.lodochkina.bank.filters.UTF8Filter</filter-class>
+        <init-param>
+            <param-name>requestEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>
