@@ -27,7 +27,7 @@ public class ClientServlet extends HttpServlet {
         }
         List<Client> clientList = this.clientService.findAll();
         req.setAttribute("clientList", clientList);
-        req.getRequestDispatcher("/views/client.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/client.jsp").forward(req, resp);
     }
 
 }

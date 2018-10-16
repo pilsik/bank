@@ -23,7 +23,7 @@ public class MaritalStatusServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<MaritalStatus> maritalStatusList = this.maritalStatusService.findAll();
         req.setAttribute("maritalStatusList", maritalStatusList);
-        req.getRequestDispatcher("/views/maritalStatus.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/views/maritalStatus.jsp").forward(req, resp);
     }
 
     @Override

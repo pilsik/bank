@@ -23,7 +23,7 @@ public class CitizenshipServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Citizenship> citizenships = this.citizenshipService.findAll();
         req.setAttribute("citizenships", citizenships);
-        req.getRequestDispatcher("/views/citizenship.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/citizenship.jsp").forward(req, resp);
     }
 
     @Override

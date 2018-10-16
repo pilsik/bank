@@ -23,7 +23,7 @@ public class CityServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<City> cityList = this.cityService.findAll();
         req.setAttribute("cities", cityList);
-        req.getRequestDispatcher("/views/city.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/city.jsp").forward(req, resp);
     }
 
     @Override

@@ -53,7 +53,7 @@ public class EditClientServlet extends HttpServlet {
         req.setAttribute("disabilityList", disabilityList);
         req.setAttribute("citizenshipList", citizenshipList);
         req.setAttribute("maritalStatuses", maritalStatuses);
-        req.getRequestDispatcher("/views/editAndCreateClient.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/editAndCreateClient.jsp").forward(req, resp);
     }
 
     @Override

@@ -23,7 +23,7 @@ public class DisabilityServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Disability> disabilityList = this.disabilityService.findAll();
         req.setAttribute("disabilityList", disabilityList);
-        req.getRequestDispatcher("/views/disability.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/views/disability.jsp").forward(req, resp);
     }
 
     @Override
