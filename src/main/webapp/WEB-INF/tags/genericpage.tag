@@ -1,5 +1,4 @@
 <%@tag description="Overall Page template" pageEncoding="UTF-8" %>
-<%@attribute name="footer" fragment="true" %>
 <%@attribute name="title" fragment="true" %>
 <html>
 <header>
@@ -20,7 +19,7 @@
 </header>
 <body>
 <section id="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">Bank</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
