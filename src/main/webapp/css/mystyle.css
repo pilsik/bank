@@ -1,9 +1,48 @@
-body{
+body {
     background-color: #007b5e;
 }
+
+/*navbar*/
+#header {
+    padding: 0;
+    background: #ffc107;
+}
+
+.btn-client {
+    width: 100%;
+    margin: auto;
+}
+
+a.nav-link {
+    color: #007b5e;
+}
+/*./navbar*/
+
+/* Form-client */
+
 .btn-client{
     width: 100%;
     margin: auto;
+}
+
+form#formClient {
+    margin: 20px 0;
+    padding: 0 25px 25px;
+    border-radius: 0 0 10px 10px;
+    background: #F9F9F9;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2), 0 7px 7px 0 rgba(0, 0, 0, 0.24);
+}
+div#formCaption{
+    margin-left: -25px;
+    margin-right: -25px;
+    background-color: #ffc107;
+}
+#formClient h3 {
+    padding: 25px 0;
+    margin-bottom: 25px;
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 input:invalid {
@@ -11,15 +50,20 @@ input:invalid {
 }
 
 input:valid {
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #007b1e;
 }
 
 input:focus:invalid {
     outline: none;
 }
 
+input.checkbox {
+    width: auto;
+    height: 38px
+}
+/* Form-client */
+
 /* Footer */
-/*@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');*/
 section {
     padding: 60px 0;
 }
@@ -31,7 +75,7 @@ section .section-title {
     text-transform: uppercase;
 }
 #footer {
-    background: #007b5e !important;
+    background: #ffc107 !important;
 }
 #footer h5{
     padding-left: 10px;
@@ -94,3 +138,18 @@ section .section-title {
     }
 }
 /* Footer */
+
+/* Table */
+#clientsTable {
+    font-size: 12px;
+}
+
+.table tr {
+    cursor: pointer;
+}
+.hiddenRow {
+    padding: 0 4px !important;
+    background-color: #eeeeee;
+    font-size: 13px;
+}
+/* Table */
