@@ -37,7 +37,7 @@
                     <td>${client.surname}</td>
                     <td>${client.name}</td>
                     <td>${client.patronymic}</td>
-                    <td>${client.dob}</td>
+                    <td><fmt:formatDate value="${client.dob}" pattern="dd-MM-yyyy" /></td>
                     <td>${client.sex}</td>
                     <td>${client.pensioner}</td>
                     <td>${client.monthly_income}</td>
@@ -68,7 +68,7 @@
                             <td>${client.passport.passport_series}</td>
                             <td>${client.passport.passport_number}</td>
                             <td>${client.passport.passport_authority}</td>
-                            <td>${client.passport.passport_date_of_issue}</td>
+                            <td><fmt:formatDate value="${client.passport.passport_date_of_issue}" pattern="dd-MM-yyyy" /></td>
                             <td>${client.passport.passport_identification_number}</td>
                             </tbody>
                         </table>
